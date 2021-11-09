@@ -1,0 +1,35 @@
+{
+  "switcherIP": "192.168.1.240",
+  "obsIP": "localhost:4444",
+  "obsPW": "test1234",
+  "tallies": [{
+    "inputID": 1,
+    "ledGpioPins": {
+      "red": 7,
+      "green": 8,
+      "blue": 25
+    },
+    "disconnectedFlashFrequency": 700,
+    "disconnectedFlashColor": {
+      "red": 255,
+      "green": 0,
+      "blue": 255
+    },
+    "invertSignals": false
+  },
+    {
+      "inputID": 4,
+      "ledGpioPins": {
+        "red": 11,
+        "green": 9,
+        "blue": 10
+      },
+      "disconnectedFlashFrequency": 700,
+      "disconnectedFlashColor": {
+        "red": 255,
+        "green": 0,
+        "blue": 255
+      },
+      "invertSignals": false
+    }]
+}
