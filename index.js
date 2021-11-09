@@ -109,25 +109,41 @@ function update(data, state) {
 			} else if(state.video.ME[0].inTransition && (preview === tallies[i].config.inputID)) {
 				tallies[i].lights.yellow();
 				console.log(i+" yellow");
-			} else if(state.video.ME[0].inTransition && (programm === tallies[i].config.inputID)){
-				tallies[i].lights.green();
-				console.log(i+" green"); 
-			} else if(program === tallies[i].config.inputID) {
+			} else if(state.video.ME[0].inTransition && (program === tallies[i].config.inputID)){
 				tallies[i].lights.red();
-				console.log(i+" red");
+				console.log(i+" red"); 
+			} else if(program === tallies[i].config.inputID) {
+				tallies[i].lights.green();
+				console.log(i+" green");
 			} else if(preview === tallies[i].config.inputID) {
 				tallies[i].lights.off();
-				console.log(i+" green");
+				console.log(i+" off");
 			} else { // Camera is not in preview or program
 				tallies[i].lights.off();
 				console.log(i+" off");
 			}
-		}else if (obs_data.sceneName==="Intro"){
-			console.log("INTRO");
-			tallies[i].lights.blue();
-		}else if (obs_data.sceneName==="Outro"){
-			console.log("OUTRO");
-			tallies[i].lights.blue();
+		}else if (obs_data.sceneName==="Intro" || obs_data.sceneName==="Outro"){
+			console.log("INTRO or OUTRO");
+			if(state.video.ME[0].fadeToBlack && state.video.ME[0].fadeToBlack.isFullyBlack) {
+                                tallies[i].lights.off();
+                                console.log("ftb");
+                                // This camera is either in program OR preview, and there is an ongoing transition.
+                        } else if(state.video.ME[0].inTransition && (preview === tallies[i].config.inputID)) {
+                                tallies[i].lights.yellow();
+                                console.log(i+" yellow");
+                        } else if(state.video.ME[0].inTransition && (program === tallies[i].config.inputID)){
+                                tallies[i].lights.red();
+                                console.log(i+" red");
+                        } else if(program === tallies[i].config.inputID) {
+                                tallies[i].lights.yellow();
+                                console.log(i+" yellow");
+                        } else if(preview === tallies[i].config.inputID) {
+                                tallies[i].lights.off();
+                                console.log(i+" off");
+                        } else { // Camera is not in preview or program
+                                tallies[i].lights.off();
+                                console.log(i+" off");
+                        }
 		}else{
 			console.log("ELSE");
 			tallies[i].lights.off();

@@ -85,7 +85,12 @@ class Lights {
      */
     yellow() {
         this.stopFlashing();
-        this.pwmWrite(255, 70, 0);
+        this.pwmWrite(255, 30, 0);
+    }
+
+    blue() {
+	this.stopFlashing();
+        this.write(false, false, true);
     }
 
     /**

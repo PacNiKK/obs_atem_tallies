@@ -1,6 +1,6 @@
 {
   "switcherIP": "192.168.1.240",
-  "obsIP": "localhost:4444",
+  "obsIP": "192.168.1.139:4444",
   "obsPW": "test1234",
   "tallies": [{
     "inputID": 1,
