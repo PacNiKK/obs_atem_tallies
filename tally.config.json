@@ -16,20 +16,80 @@
       "blue": 255
     },
     "invertSignals": false
-  },
-    {
-      "inputID": 4,
-      "ledGpioPins": {
-        "red": 11,
-        "green": 9,
-        "blue": 10
-      },
-      "disconnectedFlashFrequency": 700,
-      "disconnectedFlashColor": {
-        "red": 255,
-        "green": 0,
-        "blue": 255
-      },
-      "invertSignals": false
-    }]
+    },{
+    "inputID": 4,
+    "ledGpioPins": {
+      "red": 11,
+      "green": 9,
+      "blue": 10
+    },
+    "disconnectedFlashFrequency": 700,
+    "disconnectedFlashColor": {
+      "red": 255,
+      "green": 0,
+      "blue": 255
+    },
+    "invertSignals": false
+    }],
+  "scenes": [{
+    "sceneName":"ATEM",
+    "programColor":"green",
+    "previewColor":"off",
+    "fadeOutColor":"red",
+    "fadeInColor":"yellow",
+    "ftbColor":"off"
+    },{
+    "sceneName":"Intro",
+    "programColor":"blue",
+    "previewColor":"off",
+    "fadeOutColor":"red",
+    "fadeInColor":"blue",
+    "ftbColor":"off"    
+    },{
+    "sceneName":"Outro",
+    "programColor":"blue",
+    "previewColor":"off",
+    "fadeOutColor":"red",
+    "fadeInColor":"blue",
+    "ftbColor":"off"    
+    },{
+    "sceneName":"default",
+    "programColor":"off",
+    "previewColor":"off",
+    "fadeOutColor":"off",
+    "fadeInColor":"off",
+    "ftbColor":"off"    
+    }],
+  "colors": [{
+    "off": {
+      "red": 0,
+      "green": 0,
+      "blue": 0
+    },
+    "red": {
+      "red": 255,
+      "green": 0,
+      "blue": 0
+    },
+    "green": {
+      "red": 0,
+      "green": 255,
+      "blue": 0
+    },
+    "blue": {
+      "red": 0,
+      "green": 0,
+      "blue": 255
+    },
+    "yellow": {
+      "red": 255,
+      "green": 55,
+      "blue": 0
+    },
+    "white": {
+      "red": 255,
+      "green": 255,
+      "blue": 255
+    }
+  }]
 }

@@ -114,5 +114,3 @@ dist
 .idea/modules.xml
 .idea/vcs.xml
 
-# Tally config
-tally.config.json

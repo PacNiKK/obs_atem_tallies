@@ -1,4 +1,11 @@
 const Gpio = require('pigpio').Gpio;
+const config = require('./tally.config.json');
+
+const colors = [];
+for (let i = 0 ; i < config.colors.length ; i++){
+    colors[i]={};
+    colors[i]=config.colors[i];
+}
 
 /**
  * RGB light interface
@@ -126,10 +133,17 @@ class Lights {
             green = 255 - green;
             blue = 255 - blue;
         }
-
+        
         this.redLight.pwmWrite(red);
         this.greenLight.pwmWrite(green);
         this.blueLight.pwmWrite(blue);
+    }
+    color(color) {
+        for(let i=0; i<colors.length; i++){
+            if(color===colors[i].color){
+            this.pwmWrite(colors[i].red,colors[i].green,colors[i].blue);
+            }
+        }
     }
 }
 
